@@ -22,3 +22,23 @@ async function post(url) {
     );
   });
 }
+
+async function get(url) {
+  return new Promise(function (resolve, reject) {
+    request(url, function (err, res, resbody) {
+      if (err) {
+        reject(err);
+      } else {
+        console.log("GET :", res.statusCode);
+        resolve(resbody);
+      }
+    });
+  });
+}
+async function main() {
+  ret = await get(url);
+  console.log(ret);
+  ret = await post(url);
+  console.log(ret);
+}
+main();
