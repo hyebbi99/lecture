@@ -33,6 +33,6 @@ io.on("connection", function (socket) {
     console.log(data);
     io.sockets
       .in(roomName)
-      .emit("recMsg", { comment: Id + ":" + data.comment + "\n" });
+      .emit("recMsg", { comment: instancedId + ":" + data.comment + "\n" });
   });
 });
